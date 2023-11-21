@@ -45,7 +45,7 @@ export default function Intro() {
           </motion.p>
 
           <motion.div
-            className="flex flex-col sm:flex-row items-center justify-center gap-2 text-lg font-medium"
+            className="flex flex-col sm:flex-row items-center justify-left gap-2 text-lg mt-4 font-medium"
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -54,7 +54,7 @@ export default function Intro() {
           >
             <Link
               href="#contact"
-              className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
+              className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 text-base rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
               onClick={() => {
                 // setActiveSection("Contact");
                 setTimeOfLastClick(Date.now());
@@ -66,7 +66,7 @@ export default function Intro() {
 
             <Link
               href="#contact"
-              className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10"
+              className="group bg-white px-7 py-3 flex items-center text-base  gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10"
               onClick={() => {
                 // setActiveSection("Contact");
                 setTimeOfLastClick(Date.now());
