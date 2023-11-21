@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+/* 
 @layer base {
   h1 {
     @apply text-5xl lg:text-6xl font-bold py-4 tracking-widest;
@@ -22,9 +22,9 @@
     @apply py-8 px-10 lg:py-10 lg:px-12 xl:py-14 xl:px-16;
   }
   .glow-on-hover:hover {
-    box-shadow: 0 0 15px 3px rgba(255, 255, 255, 0.6); /* This creates the glowing effect */
+    box-shadow: 0 0 15px 3px rgba(255, 255, 255, 0.6); 
   }
-}
+} */
 
 html {
   --line-color: #e5e7eb;
