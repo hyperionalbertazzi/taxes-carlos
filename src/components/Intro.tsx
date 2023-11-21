@@ -9,6 +9,7 @@ import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
+import { Badge } from "./Badge";
 
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
@@ -22,6 +23,9 @@ export default function Intro() {
     >
       <div className="flex flex-row mb-10 mt-4 ">
         <div className="flex flex-col w-2/3">
+          <div className="w-1/2 flex items-center">
+            <Badge text="We are launching soon" />
+          </div>
           <motion.h1
             className="text-2xl font-bold sm:text-6xl py-4"
             initial={{ opacity: 0, y: 100 }}
@@ -41,7 +45,7 @@ export default function Intro() {
           </motion.p>
 
           <motion.div
-            className="flex flex-col sm:flex-row items-center justify-center gap-2  text-lg font-medium"
+            className="flex flex-col sm:flex-row items-center justify-center gap-2 text-lg font-medium"
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
