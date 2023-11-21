@@ -8,6 +8,7 @@ import {
   InfiniteMovingCards,
   InfiniteMovingCardsPreview,
 } from "@/components/InfiniteMovingCards";
+import Partner from "@/components/Partner";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Intro />
       <SectionDivider />
       <About />
+      <Partner />
       <Projects />
       <InfiniteMovingCardsPreview />
       <Skills />
