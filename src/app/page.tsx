@@ -4,10 +4,7 @@ import Projects from "@/components/Projects";
 import SectionDivider from "@/components/Section-divider";
 import Skills from "@/components/Skills";
 import Cta from "@/components/Cta";
-import {
-  InfiniteMovingCards,
-  InfiniteMovingCardsPreview,
-} from "@/components/InfiniteMovingCards";
+import { InfiniteMovingCards, Testimonials } from "@/components/Testimonials";
 import Partner from "@/components/Partner";
 
 export default function Home() {
@@ -15,11 +12,9 @@ export default function Home() {
     <main className="flex flex-col items-center px-4">
       <Intro />
       <SectionDivider />
-      <About />
       <Partner />
       <Projects />
-      <InfiniteMovingCardsPreview />
-      <Skills />
+      <Testimonials />
       <Cta />
     </main>
   );

@@ -7,9 +7,11 @@ import Link from "next/link";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
+import { AiFillInstagram } from "react-icons/ai";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import { Badge } from "./Badge";
+import AnimatedNumbers from "./AnimatedNumbers";
 
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
@@ -65,7 +67,7 @@ export default function Intro() {
             </Link>
 
             <Link
-              href="#contact"
+              href="#about"
               className="group bg-white px-7 py-3 flex items-center text-base  gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10"
               onClick={() => {
                 // setActiveSection("Contact");
@@ -89,7 +91,7 @@ export default function Intro() {
               href="https://github.com"
               target="_blank"
             >
-              <FaGithubSquare />
+              <AiFillInstagram />
             </a>
           </motion.div>
         </div>
@@ -115,8 +117,8 @@ export default function Intro() {
               />
             </motion.div>
 
-            <motion.span
-              className="absolute bottom-0 right-0 text-4xl"
+            <motion.div
+              className="absolute -bottom-6 -right-20 text-4xl flex flex-col px-5 py-3 bg-slate-500 rounded-2xl border-[0.25rem] border-white shadow-xl"
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{
@@ -126,8 +128,11 @@ export default function Intro() {
                 duration: 0.7,
               }}
             >
-              👋
-            </motion.span>
+              <div className="font-bold text-white text-left text-4xl">
+                <AnimatedNumbers targetValue={12} />+
+              </div>
+              <p className="text-white text-base">Years of experience</p>
+            </motion.div>
           </div>
         </div>
       </div>

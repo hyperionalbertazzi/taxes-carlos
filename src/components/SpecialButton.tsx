@@ -24,7 +24,7 @@ export function SpecialButton({
       </div>
 
       <div
-        className="relative bg-slate-900/[0.8] border border-slate-800 backdrop-blur-xl text-white   flex items-center justify-center w-full h-full text-sm antialiased"
+        className="relative bg-slate-900/[0.8] border border-slate-800 backdrop-blur-xl text-white   flex items-center justify-center w-full h-full text-lg antialiased"
         style={{
           borderRadius: `calc(${borderRadius} * 0.96)`,
         }}
