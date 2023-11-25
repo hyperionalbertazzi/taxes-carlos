@@ -6,10 +6,7 @@ import { Outfit } from "next/font/google";
 import { twMerge } from "tailwind-merge";
 import { useSectionInView } from "@/lib/hooks";
 import { Badge } from "./Badge";
-import { RiStarSFill } from "react-icons/ri";
-import { TestimonialTooltip } from "./Tooltip";
 import Image from "next/image";
-import { MdFormatQuote } from "react-icons/md";
 
 // import { LeftGradient } from "@/components/LeftGradient";
 // import { RightGradient } from "@/components/RightGradient";
