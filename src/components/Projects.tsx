@@ -11,36 +11,42 @@ export const projectss = [
     description:
       "A web app that allows users to practice for front-end and UI interviews.",
     link: "https://algochurn.com",
+    id: 1,
   },
   {
     title: "Taxes Corporativos",
     description:
       "A web app that allows users to practice for front-end and UI interviews.",
     link: "https://algochurn.com",
+    id: 2,
   },
   {
     title: "Reembolsos Rapidos",
     description:
       "A web app that allows users to practice for front-end and UI interviews.",
     link: "https://algochurn.com",
+    id: 3,
   },
   {
     title: "Registro de Empresas",
     description:
       "A web app that allows users to practice for front-end and UI interviews.",
     link: "https://algochurn.com",
+    id: 4,
   },
   {
     title: "Bookkeping",
     description:
       "A web app that allows users to practice for front-end and UI interviews.",
     link: "https://algochurn.com",
+    id: 5,
   },
   {
     title: "Seguros de Salud",
     description:
       "A web app that allows users to practice for front-end and UI interviews.",
     link: "https://algochurn.com",
+    id: 6,
   },
   // ...rest of the projects
 ];
@@ -60,7 +66,7 @@ export default function Projects() {
       <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 pb-10 pt-4">
         {projectss.map((project, idx) => (
           <div
-            key={project?.link}
+            key={project?.id}
             className="relative group  block p-2 h-full w-full "
             onMouseEnter={() => setHoveredIndex(idx)}
             onMouseLeave={() => setHoveredIndex(null)}
