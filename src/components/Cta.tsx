@@ -1,7 +1,5 @@
 "use client";
 import React from "react";
-import localFont from "next/font/local";
-import { twMerge } from "tailwind-merge";
 import Image from "next/image";
 import ContactForm from "./ContactForm";
 import { useSectionInView } from "@/lib/hooks";
@@ -21,7 +19,7 @@ export default function Cta() {
           <Badge text="Contact me" />
         </div>
         <h1 className="md:text-6xl tracking-wide font-bold text-xl py-4 dark:text-white text-center md:text-left relative z-20">
-          Let's start saving <br /> money today!
+          Let&apos;s start saving <br /> money today!
         </h1>
         <p className="text-center md:text-left dark:text-neutral-300 max-w-sm relative z-20 mt-2">
           Compare your options for free. As an independent agent, I guide you
