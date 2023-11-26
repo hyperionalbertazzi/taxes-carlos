@@ -2,22 +2,23 @@
 
 import { z } from "zod";
 import { Resend } from "resend";
-import { ContactFormSchema, FormDataSchema } from "@/lib/schema";
+//import { ContactFormSchema, FormDataSchema } from "@/lib/schema";
+import { ContactFormSchema } from "@/lib/schema";
 import ContactFormEmail from "@/lib/contact-form-email";
 
-type Inputs = z.infer<typeof FormDataSchema>;
+// type Inputs = z.infer<typeof FormDataSchema>;
 
-export async function addEntry(data: Inputs) {
-  const result = FormDataSchema.safeParse(data);
+// export async function addEntry(data: Inputs) {
+//   const result = FormDataSchema.safeParse(data);
 
-  if (result.success) {
-    return { success: true, data: result.data };
-  }
+//   if (result.success) {
+//     return { success: true, data: result.data };
+//   }
 
-  if (result.error) {
-    return { success: false, error: result.error.format() };
-  }
-}
+//   if (result.error) {
+//     return { success: false, error: result.error.format() };
+//   }
+// }
 
 type ContactFormInputs = z.infer<typeof ContactFormSchema>;
 const resend = new Resend(process.env.RESEND_API_KEY);
