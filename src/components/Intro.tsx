@@ -25,9 +25,13 @@ export default function Intro() {
       className="mb-28 max-w-5xl mx-auto sm:mb-0 scroll-mt-[100rem] self-center flex flex-col md:flex-row mt-4 w-full xs:w-11/12"
     >
       <div className="flex flex-col w-full md:w-3/5 max-md:mb-5">
-        <div className="w-fit flex items-center">
+        <motion.div
+          className="w-fit flex items-center"
+          initial={{ y: -100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+        >
           <Badge text="We are launching soon" />
-        </div>
+        </motion.div>
         <motion.h1
           className="text-4xl xs:text-6xl md:text-5xl font-bold lg:text-6xl py-4"
           initial={{ opacity: 0, y: 100 }}
@@ -57,7 +61,7 @@ export default function Intro() {
           <div className="flex max-lg:flex-col gap-3">
             <Link
               href="#contact"
-              className="group bg-gray-900 text-white px-7 py-3 flex items-center justify-between gap-2 text-base rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition lg:w-fit"
+              className="group bg-secondary dark:bg-gray-900 text-white px-7 py-3 flex items-center justify-between gap-2 text-base rounded-full outline-none focus:scale-110 hover:scale-105  active:scale-105 transition lg:w-fit"
               onClick={() => {
                 // setActiveSection("Contact");
                 setTimeOfLastClick(Date.now());
@@ -69,7 +73,7 @@ export default function Intro() {
 
             <Link
               href="#about"
-              className="group bg-white px-7 py-3 flex items-center text-base justify-between gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 lg:w-fit"
+              className="group bg-white px-7 py-3 flex items-center text-base justify-between gap-2 rounded-full outline-none focus:scale-110 hover:scale-105 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 lg:w-fit"
               onClick={() => {
                 // setActiveSection("Contact");
                 setTimeOfLastClick(Date.now());
