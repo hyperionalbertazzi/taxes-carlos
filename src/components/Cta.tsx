@@ -7,12 +7,12 @@ import { Badge } from "./Badge";
 import logo from "../../public/images/Logo-C.png";
 
 export default function Cta() {
-  const { ref } = useSectionInView("About");
+  const { ref } = useSectionInView("Contact");
   return (
     <section
       ref={ref}
       id="contact"
-      className=" relative w-full overflow-hidden flex flex-col md:flex-row max-w-6xl mx-auto py-16 dark:bg-transparent"
+      className=" relative w-full overflow-hidden flex flex-col md:flex-row max-w-6xl mx-auto pb-16 dark:bg-transparent"
     >
       <div className="w-3/5">
         <div>
@@ -31,15 +31,6 @@ export default function Cta() {
       <div className="w-2/5">
         <ContactForm />
       </div>
-      <Image
-        src={logo}
-        alt="Carlos"
-        width="800"
-        height="800"
-        quality="95"
-        priority={true}
-        className="absolute bottom-0 left-0 h-32 w-auto rounded-full object-cover"
-      />
     </section>
   );
 }

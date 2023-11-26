@@ -64,7 +64,7 @@ export default function Intro() {
                   setTimeOfLastClick(Date.now());
                 }}
               >
-                <span>Contact me here </span>
+                <span>Free Quote</span>
                 <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
               </Link>
 
@@ -117,7 +117,7 @@ export default function Intro() {
                 height="800"
                 quality="95"
                 priority={true}
-                className="md:max-lg:h-64 h-72 w-auto rounded-full object-cover border-[0.35rem] border-white shadow-xl"
+                className="md:max-lg:h-64 h-96 w-auto rounded-full object-cover border-[0.35rem] border-white shadow-xl"
               />
             </motion.div>
 

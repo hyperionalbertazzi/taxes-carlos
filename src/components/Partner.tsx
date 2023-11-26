@@ -13,14 +13,14 @@ import { useActiveSectionContext } from "@/context/active-section-context";
 import { Badge } from "./Badge";
 
 export default function Partner() {
-  const { ref } = useSectionInView("About", 0.5);
+  const { ref } = useSectionInView("About", 1);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
 
   return (
     <section
       ref={ref}
       id="about"
-      className="max-w-5xl mx-auto flex flex-col mb-20"
+      className="max-w-5xl mx-auto flex flex-col py-20"
     >
       <div className="w-full pb-12 border-b border-black dark:border-white">
         <h1 className="text-6xl font-bold">
