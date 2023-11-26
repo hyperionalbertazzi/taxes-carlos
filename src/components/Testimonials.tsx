@@ -22,7 +22,7 @@ export const Testimonials = () => {
     <section
       ref={ref}
       id="testimonials"
-      className="md:h-screen flex flex-col antialiased relative overflow-hidden max-w-5xl mb-20 self-center w-11/12"
+      className="flex flex-col antialiased relative overflow-hidden max-w-5xl mb-20 self-center w-11/12"
     >
       <div className="">
         <Badge text="Testimonials" />
