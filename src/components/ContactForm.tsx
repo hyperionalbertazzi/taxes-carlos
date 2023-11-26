@@ -42,11 +42,11 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit(processForm)}
-      className="flex flex-col p-10 space-y-4 shadow-black/[0.03] backdrop-blur-[0.5rem] bg-dark dark:bg-gray-950 dark:bg-opacity-75 rounded-3xl shadow-xl"
+      className="flex flex-col p-10 space-y-4 shadow-black/[0.03] backdrop-blur-[0.5rem] bg-dark dark:bg-gray-950 dark:bg-opacity-75 rounded-2xl shadow-xl"
     >
       <input
         placeholder="name"
-        className="relative px-4 py-2 text-base rounded-3xl text-white bg-transparent border-2 border-gray-700 focus:border-blue-500 focus:outline-none focus:ring focus:ring-blue-300 shadow shadow-slate-500"
+        className="relative px-4 py-3 text-base rounded-2xl text-white bg-transparent border-2 border-gray-700 focus:border-blue-500 focus:outline-none focus:ring focus:ring-blue-300 shadow shadow-slate-500"
         {...register("name")}
       />
       {errors.name?.message && (
@@ -56,7 +56,7 @@ export default function ContactForm() {
       <input
         type="email"
         placeholder="email"
-        className="px-4 py-2 text-base rounded-3xl text-white bg-transparent border-2 border-gray-700 focus:border-blue-500 focus:outline-none focus:ring focus:ring-blue-300 shadow shadow-slate-500"
+        className="px-4 py-3 text-base rounded-2xl text-white bg-transparent border-2 border-gray-700 focus:border-blue-500 focus:outline-none focus:ring focus:ring-blue-300 shadow shadow-slate-500"
         {...register("email")}
       />
       {errors.email?.message && (
@@ -65,7 +65,7 @@ export default function ContactForm() {
       <textarea
         placeholder="message"
         rows={4}
-        className="px-4 py-2 text-base rounded-3xl text-white bg-transparent border-2 border-gray-700 focus:border-blue-500 focus:outline-none focus:ring focus:ring-blue-300 shadow shadow-slate-500"
+        className="px-4 py-2 text-base rounded-2xl text-white bg-transparent border-2 border-gray-700 focus:border-blue-500 focus:outline-none focus:ring focus:ring-blue-300 shadow shadow-slate-500"
         {...register("message")}
       ></textarea>
       {errors.message?.message && (

@@ -98,7 +98,7 @@ export default function Intro() {
         </motion.div>
       </div>
 
-      <div className="flex items-center xs:justify-center w-full md:w-2/5">
+      <div className="flex items-center justify-center w-full md:w-2/5">
         <div className="relative">
           <motion.div
             initial={{ opacity: 0, scale: 0 }}
@@ -115,12 +115,12 @@ export default function Intro() {
               height="800"
               quality="95"
               priority={true}
-              className="h-60 xs:h-72 md:h-64 lg:h-72 w-auto rounded-full object-cover border-[0.35rem] border-white shadow-xl"
+              className="h-60 xs:h-[17rem] md:h-64 lg:h-72 w-auto rounded-full object-cover border-[0.35rem] border-white shadow-xl"
             />
           </motion.div>
 
           <motion.div
-            className="absolute -bottom-6 -right-14 md:-right-10 lg:-right-20 text-4xl flex flex-col px-5 py-3 bg-slate-500 rounded-2xl border-[0.25rem] border-white shadow-xl"
+            className="absolute -bottom-6 -right-12 lg:-right-20 text-4xl flex flex-col px-5 py-3 bg-slate-500 rounded-2xl border-[0.25rem] border-white shadow-xl"
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{
