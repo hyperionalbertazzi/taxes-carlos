@@ -30,7 +30,7 @@ export default function Intro() {
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
         >
-          <Badge text="We are launching soon" />
+          <Badge text="Taxes & Insurance" />
         </motion.div>
         <motion.h1
           className="text-4xl xs:text-6xl md:text-5xl font-bold lg:text-6xl py-4"
@@ -58,7 +58,7 @@ export default function Intro() {
             delay: 0.1,
           }}
         >
-          <div className="flex max-lg:flex-col gap-3">
+          <div className="flex gap-3">
             <Link
               href="#contact"
               className="group bg-secondary dark:bg-gray-900 text-white px-7 py-3 flex items-center justify-between gap-2 text-base rounded-full outline-none focus:scale-110 hover:scale-105  active:scale-105 transition lg:w-fit"
@@ -84,7 +84,7 @@ export default function Intro() {
             </Link>
           </div>
 
-          <div className="flex max-lg:flex-col gap-3">
+          <div className="hidden lg:flex max-lg:flex-col gap-3">
             <a
               className="bg-white p-4 text-gray-700 hover:text-gray-950 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
               href="https://linkedin.com"
@@ -126,7 +126,7 @@ export default function Intro() {
           </motion.div>
 
           <motion.div
-            className="absolute -bottom-6 md:max-lg:-right-10 -right-20 text-4xl flex flex-col px-5 py-3 bg-slate-500 rounded-2xl border-[0.25rem] border-white shadow-xl"
+            className="absolute -bottom-6 md:max-lg:-right-10 -right-20 text-4xl flex flex-col px-2 lg:px-5 py-3 bg-slate-500 rounded-2xl border-[0.25rem] border-white shadow-xl"
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{
@@ -136,10 +136,12 @@ export default function Intro() {
               duration: 0.7,
             }}
           >
-            <div className="font-bold text-white text-left md:max-lg:text-3xl text-4xl">
+            <div className="font-bold text-white text-left md:max-lg:text-2xl text-4xl">
               <AnimatedNumbers targetValue={12} />+
             </div>
-            <p className="text-white text-base">Years of experience</p>
+            <p className="text-white text-sm lg:text-base flex-wrap">
+              Years of experience
+            </p>
           </motion.div>
         </div>
       </div>
