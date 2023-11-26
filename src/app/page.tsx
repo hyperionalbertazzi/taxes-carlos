@@ -12,7 +12,7 @@ export default function Home() {
       <SectionDivider />
       <Partner />
       <Projects />
-      {/* <Testimonials /> */}
+      <Testimonials />
       <Cta />
     </main>
   );

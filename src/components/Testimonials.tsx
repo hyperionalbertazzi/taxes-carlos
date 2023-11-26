@@ -22,12 +22,12 @@ export const Testimonials = () => {
     <section
       ref={ref}
       id="testimonials"
-      className="h-screen flex flex-col antialiased items-center justify-center relative overflow-hidden"
+      className="md:h-screen flex flex-col antialiased relative overflow-hidden max-w-5xl mb-20 self-center w-11/12"
     >
       <div className="">
         <Badge text="Testimonials" />
       </div>
-      <h1 className="md:text-5xl font-bold text-xl dark:text-white py-4">
+      <h1 className="text-4xl xs:text-6xl md:text-5xl font-bold lg:text-6xl dark:text-white py-4">
         What some clients got to say
       </h1>
       <InfiniteMovingCards direction="left" speed="slow" />
@@ -160,7 +160,7 @@ export const InfiniteMovingCards = ({
             }}
             key={testimonial.name}
           >
-            <blockquote>
+            <blockquote className="flex flex-col justify-between h-full">
               <div
                 aria-hidden="true"
                 className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
