@@ -21,7 +21,7 @@ export const projectss = [
     id: 2,
   },
   {
-    title: "Reembolsos Rapidos",
+    title: "Reembolsos Rápidos",
     description:
       "A web app that allows users to practice for front-end and UI interviews.",
     link: "https://algochurn.com",
@@ -56,18 +56,18 @@ export default function Projects() {
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section ref={ref} id="services" className="max-w-5xl mx-auto px-8 py-8">
-      <div className="ml-2 mb-4">
+    <section ref={ref} id="services" className="max-w-5xl flex flex-col mb-20 self-center w-11/12">
+      <div className="mb-4">
         <Badge text="Services" />
       </div>
-      <h1 className="md:text-5xl font-bold text-xl dark:text-white ml-2">
+      <h1 className="text-4xl xs:text-6xl md:text-5xl font-bold lg:text-6xl dark:text-white">
         An Agent You <br /> Can Count On
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 pb-10 pt-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pb-10 pt-4 w-full -mx-2">
         {projectss.map((project, idx) => (
           <div
             key={project?.id}
-            className="relative group  block p-2 h-full w-full "
+            className="relative group block p-2 h-full w-full"
             onMouseEnter={() => setHoveredIndex(idx)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
