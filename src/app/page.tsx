@@ -7,7 +7,7 @@ import Partner from "@/components/Partner";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center px-4">
+    <main className="flex flex-col items-center px-4 w-full">
       <Intro />
       <SectionDivider />
       <Partner />
