@@ -12,6 +12,7 @@ import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import { Badge } from "./Badge";
 import AnimatedNumbers from "./AnimatedNumbers";
+import Foto from "../../public/images/carlos-foto.jpg";
 
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
@@ -63,7 +64,7 @@ export default function Intro() {
                   setTimeOfLastClick(Date.now());
                 }}
               >
-                <span>Contact me here{" "}</span>
+                <span>Contact me here </span>
                 <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
               </Link>
 
@@ -75,7 +76,7 @@ export default function Intro() {
                   setTimeOfLastClick(Date.now());
                 }}
               >
-                <span>Discover{" "}</span>
+                <span>Discover </span>
                 <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
               </Link>
             </div>
@@ -110,7 +111,7 @@ export default function Intro() {
               }}
             >
               <Image
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=368&h=368&q=100"
+                src={Foto}
                 alt="Ricardo portrait"
                 width="800"
                 height="800"
