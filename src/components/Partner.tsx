@@ -27,15 +27,15 @@ export default function Partner() {
           Partner with us to unleash business potential
         </h1>
       </div>
-      <div className="flex flex-row w-full">
+      <div className="flex flex-col lg:flex-row w-full">
         <div className="flex flex-col w-11/12 text-sm xs:text-base xl:text-lg">
-          <p className="max-w-xl py-12">
+          <p className="max-w-xl pt-12 pb-4 lg:pb-12">
             At Consultant, we recognize the individuality of each business,
             rejecting generic fixes. Hence, we adopt a custom method to offer
             strategies that match your objectives, difficulties, and sectoral
             fluctuations.
           </p>
-          <div className="flex flex-row items-center gap-6 sm:gap-12 max-sm:mt-4">
+          <div className="flex flex-col lg:flex-row items-left lg:items-center gap-2 sm:gap-12 max-sm:mt-4">
             <div className="flex flex-row items-center space-x-2">
               <MdOutlineDone className="w-6 h-6" />
               <p className="font-medium">Strategic Expertise</p>
@@ -50,9 +50,9 @@ export default function Partner() {
             </div>
           </div>
         </div>
-        <div className="relative h-[200px] w-1/12 bg-slate-800 flex items-center justify-center hover:cursor-pointer group">
+        <div className="relative h-[40px] mt-6 lg:mt-0 w-full lg:h-[200px] lg:w-1/12 bg-slate-800 flex items-center justify-center hover:cursor-pointer group">
           <div className=" absolute left-0 top-0 w-0 h-full transition-all duration-500 ease-in group-hover:w-full shadow-black/[0.03] backdrop-blur-[0.5rem] bg-gray-950 bg-opacity-75" />
-          <LuArrowDownRight className="w-10 h-10 text-white z-10" />
+          <LuArrowDownRight className="w-6 h-6 lg:w-10 lg:h-10 text-white z-10" />
         </div>
       </div>
     </section>
