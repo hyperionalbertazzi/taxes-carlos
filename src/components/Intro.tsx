@@ -41,7 +41,7 @@ export default function Intro() {
         viewRef(el);
       }}
       id="home"
-      className="relative flex items-center justify-center min-h-screen w-full"
+      className="relative flex items-center justify-center h-screen w-full"
     >
       <div className="mb-28 max-w-5xl mx-auto self-center flex flex-col md:flex-row w-full xs:w-11/12">
         <div className="flex flex-col w-full md:w-3/5 max-md:mb-5">
@@ -63,7 +63,7 @@ export default function Intro() {
           </motion.h1>
 
           <motion.p
-            className="py-4 text-sm xs:text-base xl:text-lg w-11/12"
+            className="pt-0 pb-4 lg:py-4 text-sm xs:text-base xl:text-lg w-11/12"
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
           >

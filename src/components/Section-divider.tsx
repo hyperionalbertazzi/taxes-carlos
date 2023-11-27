@@ -11,13 +11,13 @@ export default function SectionDivider() {
 
   return (
     <>
-      <Link href="#about" className="absolute left-1/2 bottom-20 ">
+      <Link href="#about" className="absolute left-1/2 bottom-0 ">
         <motion.div
           animate={{ y: [-10, 0, -10] }}
           transition={{ repeat: Infinity, duration: 2 }}
           className="inline-block" // Esta clase asegura que el div se comporte como un elemento en línea
         >
-          <FaArrowDownLong className="h-12 w-12 text-gray-200 max-sm:hidden dark:text-opacity-20" />
+          <FaArrowDownLong className="w-8 h-8 lg:h-12 lg:w-12 text-secondary/90 dark:text-gray-200 dark:text-opacity-20" />
         </motion.div>
       </Link>
     </>
