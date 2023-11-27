@@ -60,7 +60,7 @@ export default function Partner() {
               strategies that match your objectives, difficulties, and sectoral
               fluctuations.
             </p>
-            <div className="flex flex-col lg:flex-row items-left lg:items-center gap-2 sm:gap-12 max-sm:mt-4">
+            <div className="flex flex-col text-base xl:text-lg lg:flex-row items-left lg:items-center gap-2 sm:gap-12 max-sm:mt-4">
               <div className="flex flex-row items-center space-x-2">
                 <MdOutlineDone className="w-6 h-6" />
                 <p className="font-medium">Strategic Expertise</p>
@@ -75,10 +75,13 @@ export default function Partner() {
               </div>
             </div>
           </div>
-          <div className="relative h-[40px] mt-6 lg:mt-0 w-full lg:h-[200px] lg:w-1/12 bg-slate-800 flex items-center justify-center hover:cursor-pointer group">
+          <Link
+            href="#services"
+            className="relative h-[45px] mt-6 lg:mt-0 w-full lg:h-[200px] lg:w-1/12 bg-slate-800 flex items-center justify-center hover:cursor-pointer group"
+          >
             <div className=" absolute left-0 top-0 w-0 h-full transition-all duration-500 ease-in group-hover:w-full shadow-black/[0.03] backdrop-blur-[0.5rem] bg-gray-950 bg-opacity-75" />
-            <LuArrowDownRight className="w-6 h-6 lg:w-10 lg:h-10 text-white z-10" />
-          </div>
+            <LuArrowDownRight className="w-6 h-6 lg:w-10 lg:h-10 text-white z-10 rotate-45" />
+          </Link>
         </div>
       </div>
     </section>
