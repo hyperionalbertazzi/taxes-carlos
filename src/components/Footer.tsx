@@ -24,7 +24,7 @@ export default function Footer() {
         <FaSquarePhone className="w-8 h-8 text-gray-400 dark:text-opacity-50" />
         <p>+1 786 208 4176</p>
       </a>
-      <p className="text-lg mb-1 font-bold text-secondary dark:text-gray-500">
+      <p className="text-xl mb-1 font-bold text-secondary dark:text-gray-500">
         Carlos Albertazzi
       </p>
       <small className="mb-1 block text-sm">

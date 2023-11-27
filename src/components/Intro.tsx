@@ -19,20 +19,27 @@ import SectionDivider from "./Section-divider";
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
-  const { ref: viewRef, inView, entry } = useInView({
-    threshold: 0.01
-  })
+  const {
+    ref: viewRef,
+    inView,
+    entry,
+  } = useInView({
+    threshold: 0.01,
+  });
   const [animated, setAnimated] = useState(false);
 
   useEffect(() => {
     if (inView && !animated) {
-      setAnimated(true)
+      setAnimated(true);
     }
   }, [inView]);
 
   return (
     <section
-      ref={el => { ref(el); viewRef(el) }}
+      ref={(el) => {
+        ref(el);
+        viewRef(el);
+      }}
       id="home"
       className="relative flex items-center justify-center min-h-screen w-full"
     >
@@ -50,8 +57,9 @@ export default function Intro() {
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            Cultivate your <br />
-            brand and expand <br /> your business
+            {/* Cultivate your <br />
+            brand and expand <br /> your business */}
+            Easy Tax & Insurance in Florida
           </motion.h1>
 
           <motion.p
@@ -59,8 +67,8 @@ export default function Intro() {
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            Our expertise lies in fostering business expansion through strategic
-            marketing consultancy.
+            Say goodbye to financial worries. I'll handle your taxes and
+            insurance, giving you peace of mind and more free time.
           </motion.p>
 
           <motion.div

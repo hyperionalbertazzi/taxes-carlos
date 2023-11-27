@@ -41,36 +41,37 @@ export default function Partner() {
       className="flex items-center justify-center min-h-screen w-full"
     >
       <div
-        className={`max-w-5xl flex flex-col py-20 self-center w-11/12 ${!animated
+        className={`max-w-5xl flex flex-col py-20 self-center w-11/12 ${
+          !animated
             ? "hidden"
             : "animate-fade-up animate-duration-1000 sm:animate-delay-500 animate-delay-200"
-          }`}
+        }`}
       >
         <div className="w-full pb-12 border-b border-black dark:border-white">
           <h1 className="text-4xl xs:text-6xl md:text-5xl font-bold lg:text-6xl">
-            Partner with us to unleash business potential
+            Tailored financial solutions with Carlos Albertazzi
           </h1>
         </div>
         <div className="flex flex-col lg:flex-row w-full">
           <div className="flex flex-col w-11/12 text-sm xs:text-base xl:text-lg">
             <p className="max-w-xl pt-12 pb-4 lg:pb-12">
-              At Consultant, we recognize the individuality of each business,
-              rejecting generic fixes. Hence, we adopt a custom method to offer
-              strategies that match your objectives, difficulties, and sectoral
-              fluctuations.
+              With X years of experience in helping people through a highly
+              individualized approach to their health and financial needs, I
+              specialize in offering diverse strategies that align with your
+              specific requirements while taking utmost care of your wallet.
             </p>
             <div className="flex flex-col text-base xl:text-lg lg:flex-row items-left lg:items-center gap-2 sm:gap-12 max-sm:mt-4">
               <div className="flex flex-row items-center space-x-2">
                 <MdOutlineDone className="w-6 h-6" />
-                <p className="font-medium">Strategic Expertise</p>
+                <p className="font-medium">Personal & Business taxes</p>
               </div>
               <div className="flex flex-row items-center space-x-2">
                 <MdOutlineDone className="w-6 h-6" />
-                <p className="font-medium">Strategic Expertise</p>
+                <p className="font-medium">Health Insurances</p>
               </div>
               <div className="flex flex-row items-center space-x-2">
                 <MdOutlineDone className="w-6 h-6" />
-                <p className="font-medium">Strategic Expertise</p>
+                <p className="font-medium">Company Registration</p>
               </div>
             </div>
           </div>

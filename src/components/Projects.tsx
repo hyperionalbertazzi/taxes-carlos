@@ -8,44 +8,43 @@ import { useInView } from "react-intersection-observer";
 
 export const projectss = [
   {
-    title: "Taxes Corporativos Personales",
+    title: "Personal Taxes",
     description:
-      "A web app that allows users to practice for front-end and UI interviews.",
+      "Personalized tax solutions for maximum efficiency and peace of mind.",
     link: "https://algochurn.com",
     id: 1,
   },
   {
-    title: "Taxes Corporativos",
+    title: "Corporative Taxes",
     description:
-      "A web app that allows users to practice for front-end and UI interviews.",
+      "Ensuring your business stays financially healthy and legally sound.",
     link: "https://algochurn.com",
     id: 2,
   },
   {
-    title: "Reembolsos Rápidos",
+    title: "Health Insurances",
     description:
-      "A web app that allows users to practice for front-end and UI interviews.",
+      "Find the plan that fit your lifestyle and budget, offering you and your family the best in health care.",
     link: "https://algochurn.com",
     id: 3,
   },
   {
-    title: "Registro de Empresas",
-    description:
-      "A web app that allows users to practice for front-end and UI interviews.",
+    title: "Company Registration",
+    description: "Get your business up and running smoothly and swiftly.",
     link: "https://algochurn.com",
     id: 4,
   },
   {
     title: "Bookkeping",
     description:
-      "A web app that allows users to practice for front-end and UI interviews.",
+      "Keep your financial records accurate, organized, and stress-free.",
     link: "https://algochurn.com",
     id: 5,
   },
   {
-    title: "Seguros de Salud",
+    title: "Rapid Refunds",
     description:
-      "A web app that allows users to practice for front-end and UI interviews.",
+      "Fast and reliable tax refund services to get your money back in your hands quicker.",
     link: "https://algochurn.com",
     id: 6,
   },
@@ -55,20 +54,37 @@ export const projectss = [
 export default function Projects() {
   const { ref } = useSectionInView("Services", 0.5);
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const { ref: viewRef, inView, entry } = useInView({
-    threshold: 0.07
-  })
+  const {
+    ref: viewRef,
+    inView,
+    entry,
+  } = useInView({
+    threshold: 0.07,
+  });
   const [animated, setAnimated] = useState(false);
 
   useEffect(() => {
     if (inView && !animated) {
-      setAnimated(true)
+      setAnimated(true);
     }
   }, [inView]);
 
   return (
-    <section ref={el => { ref(el); viewRef(el) }} id="services" className="flex items-center justify-center min-h-screen w-full">
-      <div className={`max-w-5xl flex flex-col mb-20 self-center w-11/12 ${!animated ? 'hidden' : 'animate-fade-up animate-duration-1000 sm:animate-delay-500 animate-delay-200'}`}>
+    <section
+      ref={(el) => {
+        ref(el);
+        viewRef(el);
+      }}
+      id="services"
+      className="flex items-center justify-center min-h-screen w-full"
+    >
+      <div
+        className={`max-w-5xl flex flex-col mb-20 self-center w-11/12 ${
+          !animated
+            ? "hidden"
+            : "animate-fade-up animate-duration-1000 sm:animate-delay-500 animate-delay-200"
+        }`}
+      >
         <div className="mb-4">
           <Badge text="Services" />
         </div>
