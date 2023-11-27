@@ -14,7 +14,7 @@ export default function Cta() {
     inView,
     entry,
   } = useInView({
-    threshold: 0.1,
+    threshold: 0.07,
   });
   const [animated, setAnimated] = useState(false);
 
@@ -34,11 +34,10 @@ export default function Cta() {
       className="flex items-center justify-center min-h-screen w-full"
     >
       <div
-        className={`relative overflow-hidden max-w-5xl flex flex-col md:flex-row mb-20 self-center w-11/12 gap-6 ${
-          !animated
-            ? "hidden"
-            : "animate-fade-up animate-duration-1000 animate-delay-500 sm:animate-delay-300"
-        }`}
+        className={`relative overflow-hidden max-w-5xl flex flex-col md:flex-row mb-20 self-center w-11/12 gap-6 ${!animated
+          ? "hidden"
+          : "animate-fade-up animate-duration-1000 sm:animate-delay-500 animate-delay-200"
+          }`}
       >
         <div className="w-full md:w-1/2 lg:w-3/5">
           <div className="mb-4">
