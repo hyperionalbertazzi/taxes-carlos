@@ -56,7 +56,7 @@ export default function Projects() {
   const { ref } = useSectionInView("Services", 0.5);
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const { ref: viewRef, inView, entry } = useInView({
-    threshold: 0.1
+    threshold: 0.07
   })
   const [animated, setAnimated] = useState(false);
 
@@ -68,7 +68,7 @@ export default function Projects() {
 
   return (
     <section ref={el => { ref(el); viewRef(el) }} id="services" className="flex items-center justify-center min-h-screen w-full">
-      <div className={`max-w-5xl flex flex-col mb-20 self-center w-11/12 ${!animated ? 'hidden' : 'animate-fade-up animate-duration-1000 animate-delay-500 sm:animate-delay-300'}`}>
+      <div className={`max-w-5xl flex flex-col mb-20 self-center w-11/12 ${!animated ? 'hidden' : 'animate-fade-up animate-duration-1000 sm:animate-delay-500 animate-delay-200'}`}>
         <div className="mb-4">
           <Badge text="Services" />
         </div>
