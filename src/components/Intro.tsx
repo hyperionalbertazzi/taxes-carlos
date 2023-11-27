@@ -139,7 +139,7 @@ export default function Intro() {
             </motion.div>
 
             <motion.div
-              className="absolute -bottom-6 md:max-lg:-right-10 -right-20 text-4xl flex flex-col px-2 lg:px-5 py-3 bg-slate-500 rounded-2xl border-[0.25rem] border-white shadow-xl"
+              className="absolute -bottom-6 md:max-lg:-right-10 lg:max-xl:-right-4 -right-20 text-4xl flex flex-col px-2 lg:px-5 py-3 bg-slate-500 rounded-2xl border-[0.25rem] border-white shadow-xl"
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{
