@@ -22,15 +22,18 @@ export const Testimonials = () => {
     <section
       ref={ref}
       id="testimonials"
-      className="flex flex-col antialiased relative overflow-hidden max-w-5xl mb-20 self-center w-11/12"
+      className="flex items-center justify-center min-h-screen w-full"
     >
-      <div className="">
-        <Badge text="Testimonials" />
+      <div className="flex flex-col antialiased relative overflow-hidden max-w-5xl mb-20 self-center w-11/12">
+        <div className="">
+          <Badge text="Testimonials" />
+        </div>
+        <h1 className="text-4xl xs:text-6xl md:text-5xl font-bold lg:text-6xl dark:text-white py-4">
+          What some clients got to say
+        </h1>
+        <InfiniteMovingCards direction="left" speed="slow" />
+
       </div>
-      <h1 className="text-4xl xs:text-6xl md:text-5xl font-bold lg:text-6xl dark:text-white py-4">
-        What some clients got to say
-      </h1>
-      <InfiniteMovingCards direction="left" speed="slow" />
     </section>
   );
 };
