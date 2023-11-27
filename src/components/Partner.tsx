@@ -77,7 +77,7 @@ export default function Partner() {
           </div>
           <Link
             href="#services"
-            className="relative h-[45px] mt-6 lg:mt-0 w-full lg:h-[200px] lg:w-1/12 bg-slate-800 flex items-center justify-center hover:cursor-pointer group"
+            className="relative h-[45px] mt-6 lg:mt-0 w-full lg:h-[245px] lg:w-1/12 bg-slate-800 flex items-center justify-center hover:cursor-pointer group"
           >
             <div className=" absolute left-0 top-0 w-0 h-full transition-all duration-500 ease-in group-hover:w-full shadow-black/[0.03] backdrop-blur-[0.5rem] bg-gray-950 bg-opacity-75" />
             <LuArrowDownRight className="w-6 h-6 lg:w-10 lg:h-10 text-white z-10 rotate-45" />

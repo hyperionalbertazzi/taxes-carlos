@@ -8,7 +8,7 @@ export function SpecialButton({
 }: any) {
   return (
     <button
-      className="bg-transparent relative text-xl h-12 w-full p-[1px] overflow-hidden "
+      className="bg-transparent relative text-xl h-14 w-full p-[1px] overflow-hidden "
       style={{
         borderRadius: borderRadius,
       }}

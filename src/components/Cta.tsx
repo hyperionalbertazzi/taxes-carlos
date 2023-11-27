@@ -9,24 +9,37 @@ import { useInView } from "react-intersection-observer";
 
 export default function Cta() {
   const { ref } = useSectionInView("Contact");
-  const { ref: viewRef, inView, entry } = useInView({
-    threshold: 0.1
-  })
+  const {
+    ref: viewRef,
+    inView,
+    entry,
+  } = useInView({
+    threshold: 0.1,
+  });
   const [animated, setAnimated] = useState(false);
 
   useEffect(() => {
     if (inView && !animated) {
-      setAnimated(true)
+      setAnimated(true);
     }
   }, [inView]);
 
   return (
     <section
-      ref={el => { ref(el); viewRef(el) }}
+      ref={(el) => {
+        ref(el);
+        viewRef(el);
+      }}
       id="contact"
       className="flex items-center justify-center min-h-screen w-full"
     >
-      <div className={`relative overflow-hidden max-w-5xl flex flex-col md:flex-row mb-20 self-center w-11/12 gap-6 ${!animated ? 'hidden' : 'animate-fade-up animate-duration-1000 animate-delay-500 sm:animate-delay-300'}`}>
+      <div
+        className={`relative overflow-hidden max-w-5xl flex flex-col md:flex-row mb-20 self-center w-11/12 gap-6 ${
+          !animated
+            ? "hidden"
+            : "animate-fade-up animate-duration-1000 animate-delay-500 sm:animate-delay-300"
+        }`}
+      >
         <div className="w-full md:w-1/2 lg:w-3/5">
           <div className="mb-4">
             <Badge text="Contact me" />
@@ -36,26 +49,14 @@ export default function Cta() {
           </h1>
           <p className="dark:text-neutral-300 max-w-sm relative z-20 mt-6 text-sm xs:text-base xl:text-lg">
             Compare your options for free. As an independent agent, I guide you
-            through, making sure you are not spending a penny more than you should
-            be.
+            through, making sure you are not spending a penny more than you
+            should be.
           </p>
-          {/* <Image
-          src={logo}
-          alt="Carlos"
-          width="800"
-          height="800"
-          quality="95"
-          priority={true}
-          className="h-32 w-auto rounded-full object-cover max-md:hidden mt-4"
-        /> */}
         </div>
 
-        <div className="flex flex-col md:justify-center w-full md:w-1/2 lg:w-2/5">
-          {animated &&
-            <ContactForm />
-          }
+        <div className="flex flex-col mt-2 md:mt-0 md:justify-center w-full md:w-1/2 lg:w-2/5">
+          {animated && <ContactForm />}
         </div>
-
       </div>
     </section>
   );
