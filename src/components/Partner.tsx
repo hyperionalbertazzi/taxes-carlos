@@ -17,7 +17,7 @@ export default function Partner() {
   const { ref } = useSectionInView("About", 1);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
   const { ref: viewRef, inView, entry } = useInView({
-    threshold: 0.01
+    threshold: 0.1
   })
   const [animated, setAnimated] = useState(false);
 
@@ -33,7 +33,7 @@ export default function Partner() {
       id="about"
       className="flex items-center justify-center min-h-screen w-full"
     >
-      <div className={`max-w-5xl flex flex-col py-20 self-center w-11/12 ${!animated && 'hidden'}`}>
+      <div className={`max-w-5xl flex flex-col py-20 self-center w-11/12 ${!animated ? 'hidden' : 'animate-fade-up animate-duration-1000 animate-delay-500 sm:animate-delay-300'}`}>
         <div className="w-full pb-12 border-b border-black dark:border-white">
           <h1 className="text-4xl xs:text-6xl md:text-5xl font-bold lg:text-6xl">
             Partner with us to unleash business potential

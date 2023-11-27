@@ -7,6 +7,7 @@ import { twMerge } from "tailwind-merge";
 import { useSectionInView } from "@/lib/hooks";
 import { Badge } from "./Badge";
 import Image from "next/image";
+import { useInView } from "react-intersection-observer";
 
 // import { LeftGradient } from "@/components/LeftGradient";
 // import { RightGradient } from "@/components/RightGradient";
@@ -18,13 +19,24 @@ const outfit = Outfit({
 
 export const Testimonials = () => {
   const { ref } = useSectionInView("Testimonials", 0.5);
+  const { ref: viewRef, inView, entry } = useInView({
+    threshold: 0.1
+  })
+  const [animated, setAnimated] = useState(false);
+
+  useEffect(() => {
+    if (inView && !animated) {
+      setAnimated(true)
+    }
+  }, [inView]);
+
   return (
     <section
-      ref={ref}
+      ref={el => { ref(el); viewRef(el) }}
       id="testimonials"
       className="flex items-center justify-center min-h-screen w-full"
     >
-      <div className="flex flex-col antialiased relative overflow-hidden max-w-5xl mb-20 self-center w-11/12">
+      <div className={`flex flex-col antialiased relative overflow-hidden max-w-5xl mb-20 self-center w-11/12 ${!animated ? 'hidden' : 'animate-fade-up animate-duration-1000 animate-delay-500 sm:animate-delay-300'}`}>
         <div className="">
           <Badge text="Testimonials" />
         </div>

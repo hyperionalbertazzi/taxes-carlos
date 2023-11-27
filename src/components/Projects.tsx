@@ -1,9 +1,10 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSectionInView } from "@/lib/hooks";
 import { Badge } from "./Badge";
+import { useInView } from "react-intersection-observer";
 
 export const projectss = [
   {
@@ -54,10 +55,20 @@ export const projectss = [
 export default function Projects() {
   const { ref } = useSectionInView("Services", 0.5);
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const { ref: viewRef, inView, entry } = useInView({
+    threshold: 0.1
+  })
+  const [animated, setAnimated] = useState(false);
+
+  useEffect(() => {
+    if (inView && !animated) {
+      setAnimated(true)
+    }
+  }, [inView]);
 
   return (
-    <section ref={ref} id="services" className="flex items-center justify-center min-h-screen w-full">
-      <div className="max-w-5xl flex flex-col mb-20 self-center w-11/12">
+    <section ref={el => { ref(el); viewRef(el) }} id="services" className="flex items-center justify-center min-h-screen w-full">
+      <div className={`max-w-5xl flex flex-col mb-20 self-center w-11/12 ${!animated ? 'hidden' : 'animate-fade-up animate-duration-1000 animate-delay-500 sm:animate-delay-300'}`}>
         <div className="mb-4">
           <Badge text="Services" />
         </div>
