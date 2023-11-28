@@ -1,16 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 import Link from "next/link";
-import { BsArrowRight, BsLinkedin } from "react-icons/bs";
-import { FaGithubSquare } from "react-icons/fa";
 import { LuArrowDownRight } from "react-icons/lu";
 import { MdOutlineDone } from "react-icons/md";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
-import { Badge } from "./Badge";
 import { useInView } from "react-intersection-observer";
 
 export default function Partner() {
@@ -26,7 +21,7 @@ export default function Partner() {
   const [animated, setAnimated] = useState(false);
 
   useEffect(() => {
-    if (inView && !animated) {
+    if (inView) {
       setAnimated(true);
     }
   }, [inView]);

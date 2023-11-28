@@ -29,7 +29,7 @@ export default function Intro() {
   const [animated, setAnimated] = useState(false);
 
   useEffect(() => {
-    if (inView && !animated) {
+    if (inView) {
       setAnimated(true);
     }
   }, [inView]);
@@ -67,7 +67,7 @@ export default function Intro() {
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            Say goodbye to financial worries. I'll handle your taxes and
+            Say goodbye to financial worries. I&apos;ll handle your taxes and
             insurance, giving you peace of mind and more free time.
           </motion.p>
 

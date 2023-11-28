@@ -4,7 +4,6 @@ import Image from "next/image";
 import ContactForm from "./ContactForm";
 import { useSectionInView } from "@/lib/hooks";
 import { Badge } from "./Badge";
-import logo from "../../public/images/Logo-C.png";
 import { useInView } from "react-intersection-observer";
 
 export default function Cta() {
@@ -19,7 +18,7 @@ export default function Cta() {
   const [animated, setAnimated] = useState(false);
 
   useEffect(() => {
-    if (inView && !animated) {
+    if (inView) {
       setAnimated(true);
     }
   }, [inView]);
@@ -34,10 +33,11 @@ export default function Cta() {
       className="flex items-center justify-center min-h-screen w-full"
     >
       <div
-        className={`relative overflow-hidden max-w-5xl flex flex-col md:flex-row mb-20 self-center w-11/12 gap-6 ${!animated
-          ? "hidden"
-          : "animate-fade-up animate-duration-1000 sm:animate-delay-500 animate-delay-200"
-          }`}
+        className={`relative overflow-hidden max-w-5xl flex flex-col md:flex-row mb-20 self-center w-11/12 gap-6 ${
+          !animated
+            ? "hidden"
+            : "animate-fade-up animate-duration-1000 sm:animate-delay-500 animate-delay-200"
+        }`}
       >
         <div className="w-full md:w-1/2 lg:w-3/5">
           <div className="mb-4">

@@ -19,24 +19,37 @@ const outfit = Outfit({
 
 export const Testimonials = () => {
   const { ref } = useSectionInView("Testimonials", 0.5);
-  const { ref: viewRef, inView, entry } = useInView({
-    threshold: 0.07
-  })
+  const {
+    ref: viewRef,
+    inView,
+    entry,
+  } = useInView({
+    threshold: 0.07,
+  });
   const [animated, setAnimated] = useState(false);
 
   useEffect(() => {
-    if (inView && !animated) {
-      setAnimated(true)
+    if (inView) {
+      setAnimated(true);
     }
   }, [inView]);
 
   return (
     <section
-      ref={el => { ref(el); viewRef(el) }}
+      ref={(el) => {
+        ref(el);
+        viewRef(el);
+      }}
       id="testimonials"
       className="flex items-center justify-center min-h-screen w-full"
     >
-      <div className={`flex flex-col antialiased relative overflow-hidden max-w-5xl mb-20 self-center w-11/12 ${!animated ? 'hidden' : 'animate-fade-up animate-duration-1000 sm:animate-delay-500 animate-delay-200'}`}>
+      <div
+        className={`flex flex-col antialiased relative overflow-hidden max-w-5xl mb-20 self-center w-11/12 ${
+          !animated
+            ? "hidden"
+            : "animate-fade-up animate-duration-1000 sm:animate-delay-500 animate-delay-200"
+        }`}
+      >
         <div className="">
           <Badge text="Testimonials" />
         </div>
@@ -44,7 +57,6 @@ export const Testimonials = () => {
           What some clients got to say
         </h1>
         <InfiniteMovingCards direction="left" speed="slow" />
-
       </div>
     </section>
   );

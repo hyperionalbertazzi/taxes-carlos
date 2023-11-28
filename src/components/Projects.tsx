@@ -64,7 +64,7 @@ export default function Projects() {
   const [animated, setAnimated] = useState(false);
 
   useEffect(() => {
-    if (inView && !animated) {
+    if (inView) {
       setAnimated(true);
     }
   }, [inView]);
