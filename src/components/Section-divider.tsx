@@ -17,7 +17,7 @@ export default function SectionDivider() {
           transition={{ repeat: Infinity, duration: 2 }}
           className="inline-block" // Esta clase asegura que el div se comporte como un elemento en línea
         >
-          <FaArrowDownLong className="w-8 h-8 lg:h-12 lg:w-12 text-secondary/90 dark:text-gray-200 dark:text-opacity-20" />
+          <FaArrowDownLong className="w-7 h-7 lg:h-12 lg:w-12 text-secondary dark:text-gray-200 dark:text-opacity-20" />
         </motion.div>
       </Link>
     </>

@@ -124,7 +124,6 @@ export default function Intro() {
             </div>
           </motion.div>
         </div>
-
         <div className="flex items-center justify-center w-full md:w-2/5">
           <div className="relative">
             <motion.div
@@ -166,6 +165,32 @@ export default function Intro() {
             </motion.div>
           </div>
         </div>
+        {/* <div className="flex flex-col md:hidden justify-center items-center mt-12 px-8">
+          <div className="text-gray-400 text-lg font-semibold">
+            Days till Taxes
+          </div>
+          <div className="text-gray-400 font-semibold">18:34:45</div>
+        </div> */}
+        {/* <div className="flex md:hidden justify-center items-center gap-6 px-8">
+          <img
+            src="/insurances/cigna.svg"
+            alt="aetnea"
+            className="w-24 h-auto opacity-30"
+          />
+          <img
+            src="/insurances/aetna.svg"
+            alt="aetnea"
+            className="w-24 h-auto opacity-30"
+          />
+        </div>
+
+        <div className="flex md:hidden justify-center items-center space-x-6">
+          <img
+            src="/insurances/unitedhealthcare.svg"
+            alt="aetnea"
+            className=" w-36 h-auto opacity-30"
+          />
+        </div> */}
       </div>
       <SectionDivider />
     </section>
