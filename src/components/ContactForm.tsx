@@ -55,7 +55,7 @@ export default function ContactForm() {
 
       <input
         type="email"
-        placeholder="email"
+        placeholder="Email"
         className="px-4 py-3 text-base rounded-2xl text-white bg-transparent border-2 border-gray-700 focus:border-blue-500 focus:outline-none focus:ring focus:ring-blue-300 shadow shadow-slate-500"
         {...register("email")}
       />
