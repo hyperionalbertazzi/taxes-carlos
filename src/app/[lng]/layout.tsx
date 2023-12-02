@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import "../globals.css"
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ThemeContextProvider from "@/context/theme-context";
@@ -8,6 +8,12 @@ import ActiveSectionContextProvider from "@/context/active-section-context";
 import { Toaster } from "react-hot-toast";
 import ThemeSwitch from "@/components/theme-switch";
 import LanguageSwitch from "@/components/language-switch";
+import { dir } from 'i18next'
+import { languages } from "../i18n/settings";
+
+export async function generateStaticParams() {
+  return languages.map((lng) => ({ lng }))
+}
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,11 +24,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  params: {
+    lng
+  }
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode,
+  params: { lng: string }
 }) {
   return (
-    <html lang="en" className="!scroll-smooth">
+    <html lang={lng} dir={dir(lng)} className="!scroll-smooth">
       <body
         className={`${inter.className} bg-gray-50 text-gray-950 relative dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90`}
       >

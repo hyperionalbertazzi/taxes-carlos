@@ -1,57 +1,14 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { SetStateAction, useEffect, useState } from "react";
 import { useSectionInView } from "@/lib/hooks";
 import { Badge } from "./Badge";
 import { useInView } from "react-intersection-observer";
+import { useTranslation } from "@/app/i18n/client";
 
-export const projectss = [
-  {
-    title: "Personal Taxes",
-    description:
-      "Personalized tax solutions for maximum efficiency and peace of mind.",
-    link: "https://algochurn.com",
-    id: 1,
-  },
-  {
-    title: "Corporative Taxes",
-    description:
-      "Ensuring your business stays financially healthy and legally sound.",
-    link: "https://algochurn.com",
-    id: 2,
-  },
-  {
-    title: "Health Insurances",
-    description:
-      "Find the plan that fit your lifestyle and budget, offering you and your family the best in health care.",
-    link: "https://algochurn.com",
-    id: 3,
-  },
-  {
-    title: "Company Registration",
-    description: "Get your business up and running smoothly and swiftly.",
-    link: "https://algochurn.com",
-    id: 4,
-  },
-  {
-    title: "Bookkeping",
-    description:
-      "Keep your financial records accurate, organized, and stress-free.",
-    link: "https://algochurn.com",
-    id: 5,
-  },
-  {
-    title: "Rapid Refunds",
-    description:
-      "Fast and reliable tax refund services to get your money back in your hands quicker.",
-    link: "https://algochurn.com",
-    id: 6,
-  },
-  // ...rest of the projects
-];
-
-export default function Projects() {
+export default function Projects({ lng }: { lng: string }) {
+  const { t } = useTranslation(lng, 'services');
   const { ref } = useSectionInView("Services", 0.5);
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const {
@@ -79,22 +36,21 @@ export default function Projects() {
       className="flex items-center justify-center min-h-screen w-full"
     >
       <div
-        className={`max-w-5xl flex flex-col mb-20 self-center w-11/12 ${
-          !animated
-            ? "hidden"
-            : "animate-fade-up animate-duration-1000 sm:animate-delay-500 animate-delay-200"
-        }`}
+        className={`max-w-5xl flex flex-col mb-20 self-center w-11/12 ${!animated
+          ? "hidden"
+          : "animate-fade-up animate-duration-1000 sm:animate-delay-500 animate-delay-200"
+          }`}
       >
         <div className="mb-4">
           <Badge text="Services" />
         </div>
         <h1 className="text-4xl xs:text-6xl md:text-5xl font-bold lg:text-6xl dark:text-white">
-          An Agent You <br /> Can Count On
+          {t('title')}
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pb-10 pt-4 w-full -mx-2">
-          {projectss.map((project, idx) => (
+          {[...Array(6)].map((value, idx: any) => (
             <div
-              key={project?.id}
+              key={idx}
               className="relative group block p-2 w-full"
               onMouseEnter={() => setHoveredIndex(idx)}
               onMouseLeave={() => setHoveredIndex(null)}
@@ -120,10 +76,10 @@ export default function Projects() {
                 <div className="relative z-50">
                   <div className="p-4">
                     <h4 className="dark:text-zinc-100 font-bold tracking-wide mt-4">
-                      {project.title}
+                      {t(`service_${idx + 1}_title`)}
                     </h4>
                     <p className="mt-8 dark:text-zinc-400 tracking-wide leading-relaxed text-sm">
-                      {project.description}
+                      {t(`service_${idx + 1}_description`)}
                     </p>
                   </div>
                 </div>

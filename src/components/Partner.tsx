@@ -7,8 +7,10 @@ import { MdOutlineDone } from "react-icons/md";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import { useInView } from "react-intersection-observer";
+import { useTranslation } from "@/app/i18n/client";
 
-export default function Partner() {
+export default function Partner({ lng }: { lng: string }) {
+  const { t } = useTranslation(lng, 'about');
   const { ref } = useSectionInView("About", 0.5);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
   const {
@@ -36,37 +38,33 @@ export default function Partner() {
       className="flex items-center justify-center min-h-screen w-full"
     >
       <div
-        className={`max-w-5xl flex flex-col py-20 self-center w-11/12 ${
-          !animated
-            ? "hidden"
-            : "animate-fade-up animate-duration-1000 sm:animate-delay-500 animate-delay-200"
-        }`}
+        className={`max-w-5xl flex flex-col py-20 self-center w-11/12 ${!animated
+          ? "hidden"
+          : "animate-fade-up animate-duration-1000 sm:animate-delay-500 animate-delay-200"
+          }`}
       >
         <div className="w-full pb-12 border-b border-black dark:border-white">
           <h1 className="text-4xl xs:text-6xl md:text-5xl font-bold lg:text-6xl">
-            Tailored financial solutions with Carlos Albertazzi
+            {t('title')}
           </h1>
         </div>
         <div className="flex flex-col lg:flex-row w-full">
           <div className="flex flex-col w-11/12 text-sm xs:text-base xl:text-lg">
             <p className="max-w-xl pt-12 pb-4 lg:pb-12">
-              With X years of experience in helping people through a highly
-              individualized approach to their health and financial needs, I
-              specialize in offering diverse strategies that align with your
-              specific requirements while taking utmost care of your wallet.
+              {t('subtitle')}
             </p>
             <div className="flex flex-col text-base xl:text-lg lg:flex-row items-left lg:items-center gap-2 sm:gap-12 max-sm:mt-4">
               <div className="flex flex-row items-center space-x-2">
                 <MdOutlineDone className="w-6 h-6" />
-                <p className="font-medium">Personal & Business taxes</p>
+                <p className="font-medium">{t('point_1')}</p>
               </div>
               <div className="flex flex-row items-center space-x-2">
                 <MdOutlineDone className="w-6 h-6" />
-                <p className="font-medium">Health Insurances</p>
+                <p className="font-medium">{t('point_2')}</p>
               </div>
               <div className="flex flex-row items-center space-x-2">
                 <MdOutlineDone className="w-6 h-6" />
-                <p className="font-medium">Company Registration</p>
+                <p className="font-medium">{t('point_3')}</p>
               </div>
             </div>
           </div>

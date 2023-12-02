@@ -5,41 +5,23 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
-import { HiDownload } from "react-icons/hi";
-import { FaGithubSquare } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
 import { Badge } from "./Badge";
 import AnimatedNumbers from "./AnimatedNumbers";
 import Foto from "../../public/images/carlos-foto.jpg";
-import { useInView } from "react-intersection-observer";
 import SectionDivider from "./Section-divider";
+import { useTranslation } from "@/app/i18n/client";
 
-export default function Intro() {
+export default function Intro({ lng }: { lng: string }) {
+  const { t } = useTranslation(lng, 'home');
   const { ref } = useSectionInView("Home", 0.5);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
-  const {
-    ref: viewRef,
-    inView,
-    entry,
-  } = useInView({
-    threshold: 0.01,
-  });
-  const [animated, setAnimated] = useState(false);
-
-  useEffect(() => {
-    if (inView) {
-      setAnimated(true);
-    }
-  }, [inView]);
 
   return (
     <section
-      ref={(el) => {
-        ref(el);
-        viewRef(el);
-      }}
+      ref={ref}
       id="home"
       className="relative flex items-center justify-center h-screen w-full"
     >
@@ -50,16 +32,14 @@ export default function Intro() {
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
           >
-            <Badge text="Taxes & Insurance" />
+            <Badge text={t('badge')} />
           </motion.div>
           <motion.h1
             className="text-4xl xs:text-6xl md:text-5xl font-bold lg:text-6xl py-4"
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            {/* Cultivate your <br />
-            brand and expand <br /> your business */}
-            Easy Tax & Insurance in Florida
+            {t('title')}
           </motion.h1>
 
           <motion.p
@@ -67,8 +47,7 @@ export default function Intro() {
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            Say goodbye to financial worries. I&apos;ll handle your taxes and
-            insurance, giving you peace of mind and more free time.
+            {t('subtitle')}
           </motion.p>
 
           <motion.div
@@ -84,11 +63,11 @@ export default function Intro() {
                 href="#contact"
                 className="group bg-secondary dark:bg-gray-900 text-white px-7 py-3 flex items-center justify-between gap-2 text-base rounded-full outline-none focus:scale-110 hover:scale-105  active:scale-105 transition lg:w-fit"
                 onClick={() => {
-                  // setActiveSection("Contact");
                   setTimeOfLastClick(Date.now());
                 }}
               >
-                <span>Free Quote</span>
+
+                <span>{t('free_quote')}</span>
                 <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
               </Link>
 
@@ -100,7 +79,7 @@ export default function Intro() {
                   setTimeOfLastClick(Date.now());
                 }}
               >
-                <span>Discover </span>
+                <span>{t('discover')}</span>
                 <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
               </Link>
             </div>
@@ -160,37 +139,11 @@ export default function Intro() {
                 <AnimatedNumbers targetValue={12} />+
               </div>
               <p className="text-white text-sm lg:text-base flex-wrap">
-                Years of experience
+                {lng == 'es' ? 'Años de experiencia' : 'Years of experience'}
               </p>
             </motion.div>
           </div>
         </div>
-        {/* <div className="flex flex-col md:hidden justify-center items-center mt-12 px-8">
-          <div className="text-gray-400 text-lg font-semibold">
-            Days till Taxes
-          </div>
-          <div className="text-gray-400 font-semibold">18:34:45</div>
-        </div> */}
-        {/* <div className="flex md:hidden justify-center items-center gap-6 px-8">
-          <img
-            src="/insurances/cigna.svg"
-            alt="aetnea"
-            className="w-24 h-auto opacity-30"
-          />
-          <img
-            src="/insurances/aetna.svg"
-            alt="aetnea"
-            className="w-24 h-auto opacity-30"
-          />
-        </div>
-
-        <div className="flex md:hidden justify-center items-center space-x-6">
-          <img
-            src="/insurances/unitedhealthcare.svg"
-            alt="aetnea"
-            className=" w-36 h-auto opacity-30"
-          />
-        </div> */}
       </div>
       <SectionDivider />
     </section>

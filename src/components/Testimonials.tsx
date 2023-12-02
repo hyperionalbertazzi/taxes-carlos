@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { Outfit } from "next/font/google";
 import { twMerge } from "tailwind-merge";
@@ -8,16 +8,15 @@ import { useSectionInView } from "@/lib/hooks";
 import { Badge } from "./Badge";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
-
-// import { LeftGradient } from "@/components/LeftGradient";
-// import { RightGradient } from "@/components/RightGradient";
+import { useTranslation } from "@/app/i18n/client";
 
 const outfit = Outfit({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
 });
 
-export const Testimonials = () => {
+export const Testimonials = ({ lng }: { lng: string }) => {
+  const { t } = useTranslation(lng, 'testimonials');
   const { ref } = useSectionInView("Testimonials", 0.5);
   const {
     ref: viewRef,
@@ -44,17 +43,16 @@ export const Testimonials = () => {
       className="flex items-center justify-center min-h-screen w-full"
     >
       <div
-        className={`flex flex-col antialiased relative overflow-hidden max-w-5xl mb-20 self-center w-11/12 ${
-          !animated
-            ? "hidden"
-            : "animate-fade-up animate-duration-1000 sm:animate-delay-500 animate-delay-200"
-        }`}
+        className={`flex flex-col antialiased relative overflow-hidden max-w-5xl mb-20 self-center w-11/12 ${!animated
+          ? "hidden"
+          : "animate-fade-up animate-duration-1000 sm:animate-delay-500 animate-delay-200"
+          }`}
       >
         <div className="">
-          <Badge text="Testimonials" />
+          <Badge text={t("badge")} />
         </div>
         <h1 className="text-4xl xs:text-6xl md:text-5xl font-bold lg:text-6xl dark:text-white py-4">
-          What some clients got to say
+          {t('title')}
         </h1>
         <InfiniteMovingCards direction="left" speed="slow" />
       </div>
@@ -113,8 +111,8 @@ export const InfiniteMovingCards = ({
     },
   ];
 
-  const containerRef = React.useRef<HTMLDivElement>(null);
-  const scrollerRef = React.useRef<HTMLUListElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const scrollerRef = useRef<HTMLUListElement>(null);
 
   useEffect(() => {
     addAnimation();
