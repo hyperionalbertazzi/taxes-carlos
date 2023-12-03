@@ -11,7 +11,10 @@ export default function SectionDivider() {
 
   return (
     <>
-      <Link href="#about" className="absolute left-1/2 bottom-0 ">
+      <Link
+        href="#about"
+        className=" max-md:hidden absolute left-1/2 bottom-0 "
+      >
         <motion.div
           animate={{ y: [-10, 0, -10] }}
           transition={{ repeat: Infinity, duration: 2 }}

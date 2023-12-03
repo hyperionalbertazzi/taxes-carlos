@@ -15,7 +15,7 @@ import SectionDivider from "./Section-divider";
 import { useTranslation } from "@/app/i18n/client";
 
 export default function Intro({ lng }: { lng: string }) {
-  const { t } = useTranslation(lng, 'home');
+  const { t } = useTranslation(lng, "home");
   const { ref } = useSectionInView("Home", 0.5);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
 
@@ -32,14 +32,14 @@ export default function Intro({ lng }: { lng: string }) {
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
           >
-            <Badge text={t('badge')} />
+            <Badge text={t("badge")} />
           </motion.div>
           <motion.h1
             className="text-4xl xs:text-6xl md:text-5xl font-bold lg:text-6xl py-4"
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            {t('title')}
+            {t("title")}
           </motion.h1>
 
           <motion.p
@@ -47,7 +47,7 @@ export default function Intro({ lng }: { lng: string }) {
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            {t('subtitle')}
+            {t("subtitle")}
           </motion.p>
 
           <motion.div
@@ -66,8 +66,7 @@ export default function Intro({ lng }: { lng: string }) {
                   setTimeOfLastClick(Date.now());
                 }}
               >
-
-                <span>{t('free_quote')}</span>
+                <span>{t("free_quote")}</span>
                 <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
               </Link>
 
@@ -79,7 +78,7 @@ export default function Intro({ lng }: { lng: string }) {
                   setTimeOfLastClick(Date.now());
                 }}
               >
-                <span>{t('discover')}</span>
+                <span>{t("discover")}</span>
                 <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
               </Link>
             </div>
@@ -139,7 +138,7 @@ export default function Intro({ lng }: { lng: string }) {
                 <AnimatedNumbers targetValue={12} />+
               </div>
               <p className="text-white text-sm lg:text-base flex-wrap">
-                {lng == 'es' ? 'Años de experiencia' : 'Years of experience'}
+                {lng == "es" ? "Años de experiencia" : "Years of experience"}
               </p>
             </motion.div>
           </div>
