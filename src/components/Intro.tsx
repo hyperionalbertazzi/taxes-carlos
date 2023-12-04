@@ -135,7 +135,7 @@ export default function Intro({ lng }: { lng: string }) {
               }}
             >
               <div className="font-bold text-white text-left md:max-lg:text-2xl text-4xl">
-                <AnimatedNumbers targetValue={12} />+
+                <AnimatedNumbers targetValue={4} />+
               </div>
               <p className="text-white text-sm lg:text-base flex-wrap">
                 {lng == "es" ? "Años de experiencia" : "Years of experience"}
