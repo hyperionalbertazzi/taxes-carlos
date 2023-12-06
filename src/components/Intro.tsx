@@ -13,10 +13,13 @@ import AnimatedNumbers from "./AnimatedNumbers";
 import Foto from "../../public/images/carlos-foto.jpg";
 import SectionDivider from "./Section-divider";
 import { useTranslation } from "@/app/i18n/client";
+import ACA from "../../public/insurances/Aca-logo.png";
+import obama from "../../public/insurances/obamacare3.png";
+import obama2 from "../../public/insurances/obamacare2.png";
 
 export default function Intro({ lng }: { lng: string }) {
   const { t } = useTranslation(lng, "home");
-  const { ref } = useSectionInView("Home", 0.5);
+  const { ref } = useSectionInView("#home", 0.5);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
 
   return (
@@ -144,6 +147,28 @@ export default function Intro({ lng }: { lng: string }) {
           </div>
         </div>
       </div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        className="absolute bottom-0 lg:bottom-20 left-1/2 transform -translate-x-20 flex justify-center gap-10"
+      >
+        <Image
+          src={obama}
+          alt="Ricardo portrait"
+          width="800"
+          height="800"
+          quality="95"
+          className="w-16 md:w-20 opacity-50 h-auto"
+        />
+        <Image
+          src={ACA}
+          alt="Ricardo portrait"
+          width="800"
+          height="800"
+          quality="95"
+          className="w-16 md:w-20 h-auto"
+        />
+      </motion.div>
       <SectionDivider />
     </section>
   );

@@ -8,8 +8,8 @@ import { useInView } from "react-intersection-observer";
 import { useTranslation } from "@/app/i18n/client";
 
 export default function Cta({ lng }: { lng: string }) {
-  const { t } = useTranslation(lng, 'contact');
-  const { ref } = useSectionInView("Contact");
+  const { t } = useTranslation(lng, "contact");
+  const { ref } = useSectionInView("#contact");
   const {
     ref: viewRef,
     inView,
@@ -35,20 +35,21 @@ export default function Cta({ lng }: { lng: string }) {
       className="flex items-center justify-center min-h-screen w-full"
     >
       <div
-        className={`relative overflow-hidden max-w-5xl flex flex-col md:flex-row mb-20 self-center w-11/12 gap-6 ${!animated
-          ? "hidden"
-          : "animate-fade-up animate-duration-1000 sm:animate-delay-500 animate-delay-200"
-          }`}
+        className={`relative overflow-hidden max-w-5xl flex flex-col md:flex-row mb-20 self-center w-11/12 gap-6 ${
+          !animated
+            ? "hidden"
+            : "animate-fade-up animate-duration-1000 sm:animate-delay-500 animate-delay-200"
+        }`}
       >
         <div className="w-full md:w-1/2 lg:w-3/5">
           <div className="mb-4">
-            <Badge text={t('badge')} />
+            <Badge text={t("badge")} />
           </div>
           <h1 className="text-4xl xs:text-6xl md:text-5xl font-bold lg:text-6xl z-20">
-            {t('title')}
+            {t("title")}
           </h1>
           <p className="dark:text-neutral-300 max-w-sm relative z-20 mt-6 text-sm xs:text-base xl:text-lg">
-            {t('subtitle')}
+            {t("subtitle")}
           </p>
         </div>
 

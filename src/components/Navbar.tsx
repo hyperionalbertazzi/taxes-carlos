@@ -3,7 +3,7 @@
 import React from "react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { links } from "@/lib/data";
+import { links, linksEs } from "@/lib/data";
 import Link from "next/link";
 import clsx from "clsx";
 import { useActiveSectionContext } from "@/context/active-section-context";
@@ -38,8 +38,9 @@ const itemVariants = {
   },
 };
 
-export default function Navbar() {
+export default function Navbar({ lng }: { lng: string }) {
   const [isActive, setIsActive] = useState(false);
+  const linksLang = lng === "en" ? links : linksEs;
   const { activeSection, setActiveSection, setTimeOfLastClick } =
     useActiveSectionContext();
 
@@ -69,7 +70,8 @@ export default function Navbar() {
                 className="h-[44px] w-auto rounded-full object-cover"
               />
             </motion.div>
-            {links.map((link) => (
+
+            {linksLang.map((link) => (
               <motion.li
                 className="h-3/4 flex items-center justify-center relative"
                 key={link.hash}
@@ -81,20 +83,20 @@ export default function Navbar() {
                     "flex w-full items-center justify-center font-semibold px-3 py-3 hover:text-gray-950 transition dark:text-gray-500 dark:hover:text-gray-300",
                     {
                       "text-gray-950 dark:!text-gray-400":
-                        activeSection === link.name,
+                        activeSection === link.hash,
                       "!text-gray-200 dark:text-gray-300 bg-secondary dark:bg-primary px-5 rounded-full hover:text-white":
-                        link.name === "Contact",
+                        link.hash === "#contact",
                     }
                   )}
                   href={link.hash}
                   onClick={() => {
-                    setActiveSection(link.name);
+                    setActiveSection(link.hash);
                     setTimeOfLastClick(Date.now());
                   }}
                 >
                   {link.name}
 
-                  {link.name === activeSection && (
+                  {link.hash === activeSection && (
                     <motion.span
                       className="bg-gray-100 rounded-full absolute inset-0 -z-10 dark:bg-gray-800 dark:text-gray-200"
                       layoutId="activeSection"
@@ -150,7 +152,7 @@ export default function Navbar() {
                 exit="closed"
                 variants={dropdownVariants}
               >
-                {links.map((link) => (
+                {linksLang.map((link) => (
                   <motion.li
                     className="flex flex-col justify-left relative"
                     key={link.hash}
@@ -161,7 +163,7 @@ export default function Navbar() {
                         "flex items-center font-semibold px-3 py-2 hover:text-gray-950 transition dark:text-gray-500 dark:hover:text-gray-300",
                         {
                           "text-gray-950 dark:!text-gray-400":
-                            activeSection === link.name,
+                            activeSection === link.hash,
                           "!text-gray-200 dark:text-gray-300 bg-secondary dark:bg-primary px-5 rounded-full hover:text-white w-fit":
                             link.name === "Contact",
                         }
@@ -169,7 +171,7 @@ export default function Navbar() {
                       href={link.hash}
                       onClick={() => {
                         setIsActive(!isActive);
-                        setActiveSection(link.name);
+                        setActiveSection(link.hash);
                         setTimeOfLastClick(Date.now());
                       }}
                     >

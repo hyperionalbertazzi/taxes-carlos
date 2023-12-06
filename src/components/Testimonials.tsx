@@ -16,8 +16,8 @@ const outfit = Outfit({
 });
 
 export const Testimonials = ({ lng }: { lng: string }) => {
-  const { t } = useTranslation(lng, 'testimonials');
-  const { ref } = useSectionInView("Testimonials", 0.5);
+  const { t } = useTranslation(lng, "testimonials");
+  const { ref } = useSectionInView("#testimonials", 0.5);
   const {
     ref: viewRef,
     inView,
@@ -43,16 +43,17 @@ export const Testimonials = ({ lng }: { lng: string }) => {
       className="flex items-center justify-center min-h-screen w-full"
     >
       <div
-        className={`flex flex-col antialiased relative overflow-hidden max-w-5xl mb-20 self-center w-11/12 ${!animated
-          ? "hidden"
-          : "animate-fade-up animate-duration-1000 sm:animate-delay-500 animate-delay-200"
-          }`}
+        className={`flex flex-col antialiased relative overflow-hidden max-w-5xl mb-20 self-center w-11/12 ${
+          !animated
+            ? "hidden"
+            : "animate-fade-up animate-duration-1000 sm:animate-delay-500 animate-delay-200"
+        }`}
       >
         <div className="">
           <Badge text={t("badge")} />
         </div>
         <h1 className="text-4xl xs:text-6xl md:text-5xl font-bold lg:text-6xl dark:text-white py-4">
-          {t('title')}
+          {t("title")}
         </h1>
         <InfiniteMovingCards direction="left" speed="slow" />
       </div>

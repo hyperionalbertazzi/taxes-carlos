@@ -8,8 +8,8 @@ import { useInView } from "react-intersection-observer";
 import { useTranslation } from "@/app/i18n/client";
 
 export default function Projects({ lng }: { lng: string }) {
-  const { t } = useTranslation(lng, 'services');
-  const { ref } = useSectionInView("Services", 0.5);
+  const { t } = useTranslation(lng, "services");
+  const { ref } = useSectionInView("#services", 0.5);
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const {
     ref: viewRef,
@@ -36,16 +36,17 @@ export default function Projects({ lng }: { lng: string }) {
       className="flex items-center justify-center min-h-screen w-full"
     >
       <div
-        className={`max-w-5xl flex flex-col mb-20 self-center w-11/12 ${!animated
-          ? "hidden"
-          : "animate-fade-up animate-duration-1000 sm:animate-delay-500 animate-delay-200"
-          }`}
+        className={`max-w-5xl flex flex-col mb-20 self-center w-11/12 ${
+          !animated
+            ? "hidden"
+            : "animate-fade-up animate-duration-1000 sm:animate-delay-500 animate-delay-200"
+        }`}
       >
         <div className="mb-4">
           <Badge text="Services" />
         </div>
         <h1 className="text-4xl xs:text-6xl md:text-5xl font-bold lg:text-6xl dark:text-white">
-          {t('title')}
+          {t("title")}
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pb-10 pt-4 w-full -mx-2">
           {[...Array(6)].map((value, idx: any) => (

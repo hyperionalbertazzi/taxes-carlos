@@ -39,7 +39,7 @@ export default function RootLayout({
 
         <ThemeContextProvider>
           <ActiveSectionContextProvider>
-            <Navbar />
+            <Navbar lng={lng} />
             {children}
             <Footer />
 
