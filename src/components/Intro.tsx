@@ -150,7 +150,7 @@ export default function Intro({ lng }: { lng: string }) {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="absolute bottom-0 lg:bottom-20 left-1/2 transform -translate-x-20 flex justify-center gap-10"
+        className="absolute bottom-14 lg:bottom-24 left-1/2 transform -translate-x-20 flex justify-center gap-10"
       >
         <Image
           src={obama}

@@ -127,7 +127,7 @@ export default function Navbar({ lng }: { lng: string }) {
               height="800"
               quality="95"
               priority={true}
-              className="h-[64px] w-auto rounded-full object-cover"
+              className="h-[74px] w-auto rounded-full object-cover"
             />
           </motion.div>
           <motion.div
