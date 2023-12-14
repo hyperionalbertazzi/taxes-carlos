@@ -2,23 +2,22 @@
 
 import { z } from "zod";
 import { Resend } from "resend";
-//import { ContactFormSchema, FormDataSchema } from "@/lib/schema";
-import { ContactFormSchema } from "@/lib/schema";
+import { ContactFormSchema, FormDataSchema } from "@/lib/schema";
 import ContactFormEmail from "@/lib/contact-form-email";
 
-// type Inputs = z.infer<typeof FormDataSchema>;
+type Inputs = z.infer<typeof FormDataSchema>;
 
-// export async function addEntry(data: Inputs) {
-//   const result = FormDataSchema.safeParse(data);
+export async function addEntry(data: Inputs) {
+  const result = FormDataSchema.safeParse(data);
 
-//   if (result.success) {
-//     return { success: true, data: result.data };
-//   }
+  if (result.success) {
+    return { success: true, data: result.data };
+  }
 
-//   if (result.error) {
-//     return { success: false, error: result.error.format() };
-//   }
-// }
+  if (result.error) {
+    return { success: false, error: result.error.format() };
+  }
+}
 
 type ContactFormInputs = z.infer<typeof ContactFormSchema>;
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -30,10 +29,10 @@ export async function sendEmail(data: ContactFormInputs) {
     const { name, email, message } = result.data;
     try {
       const data = await resend.emails.send({
-        from: "Hyperion <vickx2000@gmail.com>",
-        to: ["pdavilao@gmail.com"],
+        from: "YOUR_VERIFIED_EMAIL",
+        to: ["vickx2000@gmail.com"],
         subject: "Contact form submission",
-        text: "Name: ${name}\nEmail: ${email}\nMessage: ${message}",
+        text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
         react: ContactFormEmail({ name, email, message }),
       });
       return { success: true, data };
@@ -41,6 +40,7 @@ export async function sendEmail(data: ContactFormInputs) {
       return { success: false, error };
     }
   }
+
   if (result.error) {
     return { success: false, error: result.error.format() };
   }

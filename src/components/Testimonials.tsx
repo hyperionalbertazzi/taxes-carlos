@@ -88,7 +88,7 @@ export const InfiniteMovingCards = ({
         "Helped me start my business without the stress. Carlos knows his stuff. So grateful.",
       resena:
         "Me ayudó a iniciar mi negocio sin estrés. Carlos sabe lo que hace. Muy agradecida.",
-      name: "Sarah K",
+      name: "Dave P",
       title: "Miami, Fl.",
       image:
         "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
@@ -98,7 +98,7 @@ export const InfiniteMovingCards = ({
         "Found a health plan that fits my budget. Carlos was a big help. Really happy with the service.",
       resena:
         "Encontró un plan de salud que se ajusta a mi presupuesto. Carlos fue de gran ayuda. Muy contento con el servicio.",
-      name: "Dave P",
+      name: "Sarah K",
       title: "Kendall, Fl.",
       image:
         "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
