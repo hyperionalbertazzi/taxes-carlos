@@ -55,17 +55,19 @@ export const Testimonials = ({ lng }: { lng: string }) => {
         <h1 className="text-4xl xs:text-6xl md:text-5xl font-bold lg:text-6xl dark:text-white py-4">
           {t("title")}
         </h1>
-        <InfiniteMovingCards direction="left" speed="slow" />
+        <InfiniteMovingCards lng={lng} direction="left" speed="slow" />
       </div>
     </section>
   );
 };
 
 export const InfiniteMovingCards = ({
+  lng, // Add lng here
   direction = "left",
   speed = "fast",
   pauseOnHover = true,
 }: {
+  lng?: string;
   direction?: "left" | "right";
   speed?: "fast" | "normal" | "slow";
   pauseOnHover?: boolean;
@@ -73,42 +75,43 @@ export const InfiniteMovingCards = ({
   const testimonials = [
     {
       quote:
-        "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.",
-      name: "Charles Dickens",
-      title: "A Tale of Two Cities",
+        "Carlos is great with taxes. Made everything easy and saved me a headache. Highly recommend.",
+      resena:
+        "Carlos es increíble con los impuestos. Hizo todo fácil y me ahorró dolores de cabeza. Muy recomendable.",
+      name: "Mike L",
+      title: "Doral, Fl.",
       image:
         "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3387&q=80",
     },
     {
       quote:
-        "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep.",
-      name: "William Shakespeare",
-      title: "Hamlet",
+        "Helped me start my business without the stress. Carlos knows his stuff. So grateful.",
+      resena:
+        "Me ayudó a iniciar mi negocio sin estrés. Carlos sabe lo que hace. Muy agradecida.",
+      name: "Sarah K",
+      title: "Miami, Fl.",
       image:
         "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
     },
     {
-      quote: "All that we see or seem is but a dream within a dream.",
-      name: "Edgar Allan Poe",
-      title: "A Dream Within a Dream",
+      quote:
+        "Found a health plan that fits my budget. Carlos was a big help. Really happy with the service.",
+      resena:
+        "Encontró un plan de salud que se ajusta a mi presupuesto. Carlos fue de gran ayuda. Muy contento con el servicio.",
+      name: "Dave P",
+      title: "Kendall, Fl.",
       image:
         "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
     },
     {
       quote:
-        "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
-      name: "Jane Austen",
-      title: "Pride and Prejudice",
+        "Carlos keeps my business books in check. Simple, stress-free, and reliable. Thumbs up!",
+      resena:
+        "Carlos mantiene los libros de mi negocio en orden. Simple, sin estrés y confiable. ¡Buenisimo!",
+      name: "Emma J",
+      title: "Florida.",
       image:
         "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
-    },
-    {
-      quote:
-        "Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.",
-      name: "Herman Melville",
-      title: "Moby-Dick",
-      image:
-        "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3387&q=80",
     },
   ];
 
@@ -192,7 +195,8 @@ export const InfiniteMovingCards = ({
                 className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
               ></div>
               <span className=" relative z-20 text-sm leading-[1.6] text-black dark:text-gray-100 font-normal">
-                &ldquo;{testimonial.quote} &rdquo;
+                &ldquo;{lng === "en" ? testimonial.quote : testimonial.resena}{" "}
+                &rdquo;
               </span>
               <div className="relative z-20 mt-6 flex flex-row items-center">
                 <div className="flex items-center mr-4">
