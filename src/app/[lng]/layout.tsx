@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ThemeContextProvider from "@/context/theme-context";
 import ActiveSectionContextProvider from "@/context/active-section-context";
-import { Toaster } from "react-hot-toast";
+import { Toaster } from "sonner";
 import ThemeSwitch from "@/components/theme-switch";
 import LanguageSwitch from "@/components/language-switch";
 import { dir } from "i18next";
