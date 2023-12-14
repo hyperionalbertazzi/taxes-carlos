@@ -36,11 +36,10 @@ export default function Projects({ lng }: { lng: string }) {
       className="flex items-center justify-center min-h-screen w-full"
     >
       <div
-        className={`max-w-5xl flex flex-col mb-20 self-center w-11/12 ${
-          !animated
+        className={`max-w-5xl flex flex-col max-md:py-10 self-center w-11/12 ${!animated
             ? "hidden"
             : "animate-fade-up animate-duration-1000 sm:animate-delay-500 animate-delay-200"
-        }`}
+          }`}
       >
         <div className="mb-4">
           <Badge text="Services" />
